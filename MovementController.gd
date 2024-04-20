@@ -3,27 +3,12 @@ class_name MovementController
 
 signal movement_state_changed(state_name: String)
 
-@export var camera: Camera3D
 @export var rotation_speed: float = 8
 @export var movement_speed: float = 8
 @export var player: CharacterBody3D
 
 @onready var navigation_agent: NavigationAgent3D = player.get_node("NavigationAgent3D")
 @onready var mesh_root: Node3D = player.get_node("MeshRoot")
-
-func _input(event):
-	if Input.is_action_just_pressed("LeftMouse"):
-		var mouse_pos = get_viewport().get_mouse_position()
-		
-		var ray_query = PhysicsRayQueryParameters3D.new()
-		ray_query.from = camera.project_ray_origin(mouse_pos)
-		ray_query.to = ray_query.from + camera.project_ray_normal(mouse_pos) * 100.0
-		
-		var space = player.get_world_3d().direct_space_state
-		var result = space.intersect_ray(ray_query)
-		navigation_agent.target_position = result.position
-
-		movement_state_changed.emit("walk")
 
 func _physics_process(delta):
 	if navigation_agent.is_navigation_finished():
@@ -45,3 +30,10 @@ func _physics_process(delta):
 func _on_velocity_computed(safe_velocity: Vector3):
 	player.velocity = safe_velocity
 	player.move_and_slide()
+
+
+func _on_floor_input_event(camera: Node, event: InputEvent, position: Vector3, normal: Vector3, shape_idx: int):
+	if event.is_action_pressed("LeftMouse"):
+		navigation_agent.target_position = position
+		movement_state_changed.emit("walk")
+		

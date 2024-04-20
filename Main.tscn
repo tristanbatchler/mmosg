@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://cw6ai48n1cyrb"]
+[gd_scene load_steps=21 format=3 uid="uid://cw6ai48n1cyrb"]
 
 [ext_resource type="Texture2D" uid="uid://d250bs1ed3t5o" path="res://4k JPEG/Stone 03/Stone03_Base Color.jpg" id="1_s1meo"]
 [ext_resource type="Texture2D" uid="uid://qp12w4cqssa4" path="res://4k JPEG/Stone 03/Stone03_Metallic.jpg" id="2_0vo5n"]
@@ -14,8 +14,8 @@
 [ext_resource type="Texture2D" uid="uid://c0o5ld2fwdnjv" path="res://4k JPEG/blouberg_sunrise_2_4k.jpg" id="15_igp44"]
 
 [sub_resource type="NavigationMesh" id="NavigationMesh_fbdo5"]
-vertices = PackedVector3Array(8.99999, 0.0114, -12.5, 11, 0.0114, -12.5, 11, 0.0114, -99.5, 8.74999, 0.0114, -10.75, 8.99999, 0.0114, -12.5, 11, 0.0114, -99.5, -99.5, 0.0114, -99.5, -99.5, 0.0114, -11, 11, 0.0114, -12.5, 13.25, 0.0114, -12.5, 13.25, 0.0114, -99.5, 11, 0.0114, -99.5, 15.25, 0.0114, -12.5, 15.5, 0.0114, -10.25, 99.5, 0.0114, -10.25, 99.5, 0.0114, -99.5, 13.25, 0.0114, -99.5, 13.25, 0.0114, -99.5, 13.25, 0.0114, -12.5, 15.25, 0.0114, -12.5, 9.74999, 5.5414, -11.5, 9.74999, 5.5414, 0.249992, 14.5, 5.5414, 0.249992, 14.5, 5.5414, -11.5, 9.99999, 0.0114, -11.25, 9.99999, 0.0114, -7.62939e-06, 14.25, 0.0114, -7.62939e-06, 14.25, 0.0114, -11.25, -99.5, 0.0114, -0.250008, 8.74999, 0.0114, -0.500008, 8.74999, 0.0114, -10.75, -99.5, 0.0114, -11, 15.5, 0.0114, -1.00001, 99.5, 0.0114, -1.00001, 99.5, 0.0114, -10.25, 15.5, 0.0114, -10.25, 99.5, 0.0114, -1.00001, 15.5, 0.0114, -1.00001, 15.5, 0.0114, 0.999992, 99.5, 0.0114, -1.00001, 15.5, 0.0114, 0.999992, 13.75, 0.0114, 1.24999, 14, 0.0114, 99.5, 99.5, 0.0114, 99.5, 10.25, 0.0114, 99.5, 10.5, 0.0114, 1.24999, 8.74999, 0.0114, 0.999992, -99.5, 0.0114, -0.250008, -99.5, 0.0114, 99.5, 8.74999, 0.0114, 0.999992, 8.74999, 0.0114, -0.500008, -99.5, 0.0114, -0.250008, 10.25, 0.0114, 99.5, 14, 0.0114, 99.5, 13.75, 0.0114, 1.24999, 10.5, 0.0114, 1.24999)
-polygons = [PackedInt32Array(2, 1, 0), PackedInt32Array(4, 3, 5), PackedInt32Array(5, 3, 7), PackedInt32Array(5, 7, 6), PackedInt32Array(11, 10, 8), PackedInt32Array(8, 10, 9), PackedInt32Array(13, 12, 14), PackedInt32Array(14, 12, 15), PackedInt32Array(15, 12, 16), PackedInt32Array(19, 18, 17), PackedInt32Array(23, 22, 20), PackedInt32Array(20, 22, 21), PackedInt32Array(27, 26, 24), PackedInt32Array(24, 26, 25), PackedInt32Array(29, 28, 30), PackedInt32Array(30, 28, 31), PackedInt32Array(35, 34, 32), PackedInt32Array(32, 34, 33), PackedInt32Array(38, 37, 36), PackedInt32Array(40, 39, 41), PackedInt32Array(41, 39, 42), PackedInt32Array(42, 39, 43), PackedInt32Array(45, 44, 46), PackedInt32Array(46, 44, 48), PackedInt32Array(46, 48, 47), PackedInt32Array(51, 50, 49), PackedInt32Array(55, 54, 52), PackedInt32Array(52, 54, 53)]
+vertices = PackedVector3Array(8.74172, 0.0114, -12.2648, 10.9917, 0.0114, -12.5148, 10.9917, 0.0114, -85.0148, -92.7583, 0.0114, -85.0148, -92.7583, 0.0114, -10.2648, -92.7583, 0.0114, -10.2648, 8.74172, 0.0114, -10.2648, 8.74172, 0.0114, -12.2648, 10.9917, 0.0114, -12.5148, 13.2417, 0.0114, -12.5148, 13.2417, 0.0114, -85.0148, 10.9917, 0.0114, -85.0148, 13.2417, 0.0114, -85.0148, 13.2417, 0.0114, -12.5148, 15.2417, 0.0114, -12.5148, 13.2417, 0.0114, -85.0148, 15.2417, 0.0114, -12.5148, 15.4917, 0.0114, -10.7648, 92.7417, 0.0114, -11.0148, 92.7417, 0.0114, -85.0148, 9.74172, 5.5414, -11.5148, 9.74172, 5.5414, 0.235214, 14.4917, 5.5414, 0.235214, 14.4917, 5.5414, -11.5148, 9.99172, 0.0114, -11.2648, 9.99172, 0.0114, -0.0147858, 14.2417, 0.0114, -0.0147858, 14.2417, 0.0114, -11.2648, 15.4917, 0.0114, -10.7648, 15.4917, 0.0114, -0.514786, 92.7417, 0.0114, -0.264786, 92.7417, 0.0114, -11.0148, -92.7583, 0.0114, -1.01479, 8.74172, 0.0114, -1.01479, 8.74172, 0.0114, -10.2648, -92.7583, 0.0114, -10.2648, 10.2417, 0.0114, 84.9852, 10.4917, 0.0114, 1.23521, 8.74172, 0.0114, 0.985214, -92.7583, 0.0114, -1.01479, -92.7583, 0.0114, 84.9852, 8.74172, 0.0114, 0.985214, 8.74172, 0.0114, -1.01479, -92.7583, 0.0114, -1.01479, 92.7417, 0.0114, -0.264786, 15.4917, 0.0114, -0.514786, 15.2417, 0.0114, 1.23521, 13.9917, 0.0114, 84.9852, 92.7417, 0.0114, 84.9852, 15.2417, 0.0114, 1.23521, 13.7417, 0.0114, 1.23521, 13.9917, 0.0114, 84.9852, 10.2417, 0.0114, 84.9852, 13.9917, 0.0114, 84.9852, 13.7417, 0.0114, 1.23521, 10.4917, 0.0114, 1.23521)
+polygons = [PackedInt32Array(1, 0, 2), PackedInt32Array(2, 0, 3), PackedInt32Array(3, 0, 4), PackedInt32Array(7, 6, 5), PackedInt32Array(11, 10, 8), PackedInt32Array(8, 10, 9), PackedInt32Array(14, 13, 12), PackedInt32Array(16, 15, 17), PackedInt32Array(17, 15, 18), PackedInt32Array(18, 15, 19), PackedInt32Array(23, 22, 20), PackedInt32Array(20, 22, 21), PackedInt32Array(27, 26, 24), PackedInt32Array(24, 26, 25), PackedInt32Array(28, 31, 29), PackedInt32Array(29, 31, 30), PackedInt32Array(35, 34, 32), PackedInt32Array(32, 34, 33), PackedInt32Array(37, 36, 38), PackedInt32Array(38, 36, 40), PackedInt32Array(38, 40, 39), PackedInt32Array(43, 42, 41), PackedInt32Array(45, 44, 46), PackedInt32Array(46, 44, 48), PackedInt32Array(46, 48, 47), PackedInt32Array(51, 50, 49), PackedInt32Array(55, 54, 52), PackedInt32Array(52, 54, 53)]
 cell_height = 0.01
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ef37m"]
@@ -29,16 +29,22 @@ uv1_scale = Vector3(0.275, 0.275, 0.275)
 uv1_triplanar = true
 uv1_world_triplanar = true
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_6pc4k"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_2dyvs"]
 albedo_texture = ExtResource("3_1x2sx")
 metallic = 1.0
 metallic_texture = ExtResource("4_gmll7")
 roughness_texture = ExtResource("6_40ba7")
 normal_enabled = true
 normal_texture = ExtResource("5_d5td4")
-uv1_scale = Vector3(0.51, 0.51, 0.51)
+uv1_scale = Vector3(0.69, 0.69, 0.69)
 uv1_triplanar = true
 uv1_world_triplanar = true
+
+[sub_resource type="BoxMesh" id="BoxMesh_xnpu7"]
+lightmap_size_hint = Vector2i(14, 21)
+material = SubResource("StandardMaterial3D_2dyvs")
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_7707s"]
 
 [sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_e8d43"]
 panorama = ExtResource("15_igp44")
@@ -73,15 +79,23 @@ navigation_mesh = SubResource("NavigationMesh_fbdo5")
 [node name="Rock" type="CSGBox3D" parent="NavigationRegion3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.1296, 2.74734, -5.73071)
 use_collision = true
+collision_layer = 2
 size = Vector3(5.58594, 5.55188, 12.4614)
 material = SubResource("StandardMaterial3D_ef37m")
 
-[node name="Ground" type="CSGBox3D" parent="NavigationRegion3D"]
-transform = Transform3D(-200, 0, 1.74846e-05, 0, 0.01, 0, -1.74846e-05, 0, -200, 0, -0.005, 0)
-use_collision = true
-material = SubResource("StandardMaterial3D_6pc4k")
+[node name="Floor" type="MeshInstance3D" parent="NavigationRegion3D"]
+transform = Transform3D(186.517, 0, 0, 0, 0.01, 0, 0, 0, 171.03, 0, -0.005, 0)
+mesh = SubResource("BoxMesh_xnpu7")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="NavigationRegion3D/Floor"]
+collision_layer = 2
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/Floor/StaticBody3D"]
+shape = SubResource("BoxShape3D_7707s")
 
 [node name="Player" parent="." instance=ExtResource("9_cwglq")]
+collision_layer = 2
+collision_mask = 2
 
 [node name="CamRoot" type="Node3D" parent="Player"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.7331, 0)
@@ -93,13 +107,13 @@ script = ExtResource("2_fi8u7")
 transform = Transform3D(1, 0, 0, 0, 0.964137, 0.265405, 0, -0.265405, 0.964137, 0, 0, 0)
 
 [node name="SpringArm3D" type="SpringArm3D" parent="Player/CamRoot/CamYaw/CamPitch"]
+collision_mask = 2
 
 [node name="Camera3D" type="Camera3D" parent="Player/CamRoot/CamYaw/CamPitch/SpringArm3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.63955, 5.61153)
 
-[node name="MovementController" type="Node" parent="Player" node_paths=PackedStringArray("camera", "player")]
+[node name="MovementController" type="Node" parent="Player" node_paths=PackedStringArray("player")]
 script = ExtResource("15_04hjb")
-camera = NodePath("../CamRoot/CamYaw/CamPitch/SpringArm3D/Camera3D")
 movement_speed = 3.0
 player = NodePath("..")
 
@@ -113,4 +127,11 @@ light_energy = 0.575
 light_indirect_energy = 0.404
 shadow_enabled = true
 
+[node name="Actor" parent="." instance=ExtResource("9_cwglq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.95406, 0, -2.46008)
+
+[node name="Actor2" parent="." instance=ExtResource("9_cwglq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.48176, 3.05008e-07, 4.14155)
+
+[connection signal="input_event" from="NavigationRegion3D/Floor/StaticBody3D" to="Player/MovementController" method="_on_floor_input_event"]
 [connection signal="movement_state_changed" from="Player/MovementController" to="Player" method="_on_movement_controller_movement_state_changed"]
