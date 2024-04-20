@@ -1,8 +1,7 @@
-[gd_scene load_steps=21 format=3 uid="uid://cw6ai48n1cyrb"]
+[gd_scene load_steps=20 format=3 uid="uid://cw6ai48n1cyrb"]
 
 [ext_resource type="Texture2D" uid="uid://d250bs1ed3t5o" path="res://4k JPEG/Stone 03/Stone03_Base Color.jpg" id="1_s1meo"]
 [ext_resource type="Texture2D" uid="uid://qp12w4cqssa4" path="res://4k JPEG/Stone 03/Stone03_Metallic.jpg" id="2_0vo5n"]
-[ext_resource type="Script" path="res://CameraController.gd" id="2_fi8u7"]
 [ext_resource type="Texture2D" uid="uid://cxfehrhwm75rw" path="res://4k JPEG/Grass 02/Grass03_Base Color.jpg" id="3_1x2sx"]
 [ext_resource type="Texture2D" uid="uid://c4j423vsrhamb" path="res://4k JPEG/Stone 03/Stone03_Normal.jpg" id="3_4a1vb"]
 [ext_resource type="Texture2D" uid="uid://c3x5vx4t766yv" path="res://4k JPEG/Grass 02/Grass02_Metallic.jpg" id="4_gmll7"]
@@ -10,7 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://bscg6k4bkb8bj" path="res://4k JPEG/Grass 02/Grass02_Normal.jpg" id="5_d5td4"]
 [ext_resource type="Texture2D" uid="uid://cytmc4w5xm1l" path="res://4k JPEG/Grass 02/Grass02_Roughness.jpg" id="6_40ba7"]
 [ext_resource type="PackedScene" uid="uid://naofpjdmql0a" path="res://Actor.tscn" id="9_cwglq"]
-[ext_resource type="Script" path="res://MovementController.gd" id="15_04hjb"]
+[ext_resource type="PackedScene" uid="uid://f5w4dmykjr6x" path="res://Player.tscn" id="10_d5ej6"]
 [ext_resource type="Texture2D" uid="uid://c0o5ld2fwdnjv" path="res://4k JPEG/blouberg_sunrise_2_4k.jpg" id="15_igp44"]
 
 [sub_resource type="NavigationMesh" id="NavigationMesh_fbdo5"]
@@ -93,30 +92,6 @@ collision_layer = 2
 [node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/Floor/StaticBody3D"]
 shape = SubResource("BoxShape3D_7707s")
 
-[node name="Player" parent="." instance=ExtResource("9_cwglq")]
-collision_layer = 2
-collision_mask = 2
-
-[node name="CamRoot" type="Node3D" parent="Player"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.7331, 0)
-script = ExtResource("2_fi8u7")
-
-[node name="CamYaw" type="Node3D" parent="Player/CamRoot"]
-
-[node name="CamPitch" type="Node3D" parent="Player/CamRoot/CamYaw"]
-transform = Transform3D(1, 0, 0, 0, 0.964137, 0.265405, 0, -0.265405, 0.964137, 0, 0, 0)
-
-[node name="SpringArm3D" type="SpringArm3D" parent="Player/CamRoot/CamYaw/CamPitch"]
-collision_mask = 2
-
-[node name="Camera3D" type="Camera3D" parent="Player/CamRoot/CamYaw/CamPitch/SpringArm3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.63955, 5.61153)
-
-[node name="MovementController" type="Node" parent="Player" node_paths=PackedStringArray("player")]
-script = ExtResource("15_04hjb")
-movement_speed = 3.0
-player = NodePath("..")
-
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_8t0jb")
 
@@ -127,11 +102,10 @@ light_energy = 0.575
 light_indirect_energy = 0.404
 shadow_enabled = true
 
+[node name="Player" parent="." instance=ExtResource("10_d5ej6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.1383, 0, -0.765901)
+
 [node name="Actor" parent="." instance=ExtResource("9_cwglq")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.95406, 0, -2.46008)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.68658, 0, -0.512296)
 
-[node name="Actor2" parent="." instance=ExtResource("9_cwglq")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.48176, 3.05008e-07, 4.14155)
-
-[connection signal="input_event" from="NavigationRegion3D/Floor/StaticBody3D" to="Player/MovementController" method="_on_floor_input_event"]
-[connection signal="movement_state_changed" from="Player/MovementController" to="Player" method="_on_movement_controller_movement_state_changed"]
+[connection signal="input_event" from="NavigationRegion3D/Floor/StaticBody3D" to="Player" method="_on_floor_input_event"]

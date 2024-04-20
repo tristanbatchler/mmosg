@@ -1,0 +1,25 @@
+[gd_scene load_steps=4 format=3 uid="uid://f5w4dmykjr6x"]
+
+[ext_resource type="Script" path="res://PlayerController.gd" id="1_6r4st"]
+[ext_resource type="PackedScene" uid="uid://naofpjdmql0a" path="res://Actor.tscn" id="1_tkdw1"]
+[ext_resource type="Script" path="res://CameraController.gd" id="2_3g0c2"]
+
+[node name="Player" type="Node3D"]
+script = ExtResource("1_6r4st")
+
+[node name="Actor" parent="." instance=ExtResource("1_tkdw1")]
+
+[node name="CamRoot" type="Node3D" parent="Actor"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.7331, 0)
+script = ExtResource("2_3g0c2")
+
+[node name="CamYaw" type="Node3D" parent="Actor/CamRoot"]
+
+[node name="CamPitch" type="Node3D" parent="Actor/CamRoot/CamYaw"]
+transform = Transform3D(1, 0, 0, 0, 0.964137, 0.265405, 0, -0.265405, 0.964137, 0, 0, 0)
+
+[node name="SpringArm3D" type="SpringArm3D" parent="Actor/CamRoot/CamYaw/CamPitch"]
+collision_mask = 2
+
+[node name="Camera3D" type="Camera3D" parent="Actor/CamRoot/CamYaw/CamPitch/SpringArm3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.63955, 5.61153)
