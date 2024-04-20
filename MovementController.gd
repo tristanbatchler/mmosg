@@ -3,12 +3,13 @@ class_name MovementController
 
 signal movement_state_changed(state_name: String)
 
-@export var player: CharacterBody3D
-@export var navigation_agent: NavigationAgent3D
-@export var mesh_root: Node3D
 @export var camera: Camera3D
 @export var rotation_speed: float = 8
 @export var movement_speed: float = 8
+@export var player: CharacterBody3D
+
+@onready var navigation_agent: NavigationAgent3D = player.get_node("NavigationAgent3D")
+@onready var mesh_root: Node3D = player.get_node("MeshRoot")
 
 func _input(event):
 	if Input.is_action_just_pressed("LeftMouse"):
