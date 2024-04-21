@@ -84,7 +84,6 @@ transform = Transform3D(186.517, 0, 0, 0, 0.01, 0, 0, 0, 171.03, 0, -0.005, 0)
 mesh = SubResource("BoxMesh_xnpu7")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="NavigationRegion3D/Floor" groups=["FloorBody"]]
-collision_layer = 2
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/Floor/StaticBody3D"]
 shape = SubResource("BoxShape3D_7707s")
