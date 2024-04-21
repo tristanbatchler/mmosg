@@ -32,12 +32,18 @@ class PlayState(BaseState):
         await self._send_to_other(pck.HelloPacket(state_view=self.view_dict, from_pid=self._pid, to_pid=EVERYONE))
     
     async def handle_hello(self, p: pck.HelloPacket) -> None:
-        await self._send_to_client(pck.HelloPacket(state_view=p.state_view, from_pid=p.from_pid))
+        # If we already know about this player, ignore the hello
+        if p.from_pid in self._known_others:
+            return
 
-        if p.from_pid != self._pid and p.from_pid not in self._known_others:
+        # Tell our client about the new player (it might be us!)
+        await self._send_to_client(p)
+
+        if p.from_pid != self._pid:
+            # Add the new player to our known others
             self._known_others[p.from_pid] = PlayState.View(**p.state_view)
-
-            await self._send_to_other(pck.HelloPacket(from_pid=self._pid, to_pid=p.from_pid, state_view=self.view_dict))
+            # Tell the new player about us
+            await self._send_to_other(pck.HelloPacket(state_view=self.view_dict, from_pid=self._pid, to_pid=p.from_pid))
 
     async def handle_targetlocation(self, p: pck.TargetLocationPacket) -> None:
         if p.from_pid == self._pid:
@@ -54,3 +60,9 @@ class PlayState(BaseState):
         else:
             await self._send_to_client(pck.DisconnectPacket(from_pid=p.from_pid, reason=p.reason))
             self._known_others.pop(p.from_pid, None)
+
+    async def handle_chat(self, p: pck.ChatPacket) -> None:
+        if p.from_pid == self._pid:
+            await self._send_to_other(pck.ChatPacket(from_pid=self._pid, message=p.message, to_pid=EVERYONE, exclude_sender=True))
+        
+        await self._send_to_client(p)

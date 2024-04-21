@@ -14,3 +14,6 @@ class TargetLocationPacket(BasePacket):
 
 class DisconnectPacket(BasePacket):
     reason: str
+
+class ChatPacket(BasePacket):
+    message: str
