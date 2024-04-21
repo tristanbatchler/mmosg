@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=3 uid="uid://cw6ai48n1cyrb"]
+[gd_scene load_steps=18 format=3 uid="uid://cw6ai48n1cyrb"]
 
 [ext_resource type="Texture2D" uid="uid://d250bs1ed3t5o" path="res://4k JPEG/Stone 03/Stone03_Base Color.jpg" id="1_s1meo"]
 [ext_resource type="Texture2D" uid="uid://qp12w4cqssa4" path="res://4k JPEG/Stone 03/Stone03_Metallic.jpg" id="2_0vo5n"]
@@ -8,8 +8,6 @@
 [ext_resource type="Texture2D" uid="uid://djrvwkqg53fid" path="res://4k JPEG/Stone 03/Stone03_Roughness.jpg" id="4_gua6y"]
 [ext_resource type="Texture2D" uid="uid://bscg6k4bkb8bj" path="res://4k JPEG/Grass 02/Grass02_Normal.jpg" id="5_d5td4"]
 [ext_resource type="Texture2D" uid="uid://cytmc4w5xm1l" path="res://4k JPEG/Grass 02/Grass02_Roughness.jpg" id="6_40ba7"]
-[ext_resource type="PackedScene" uid="uid://naofpjdmql0a" path="res://Actor.tscn" id="9_cwglq"]
-[ext_resource type="PackedScene" uid="uid://f5w4dmykjr6x" path="res://Player.tscn" id="10_d5ej6"]
 [ext_resource type="Texture2D" uid="uid://c0o5ld2fwdnjv" path="res://4k JPEG/blouberg_sunrise_2_4k.jpg" id="15_igp44"]
 
 [sub_resource type="NavigationMesh" id="NavigationMesh_fbdo5"]
@@ -86,7 +84,7 @@ material = SubResource("StandardMaterial3D_ef37m")
 transform = Transform3D(186.517, 0, 0, 0, 0.01, 0, 0, 0, 171.03, 0, -0.005, 0)
 mesh = SubResource("BoxMesh_xnpu7")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="NavigationRegion3D/Floor"]
+[node name="StaticBody3D" type="StaticBody3D" parent="NavigationRegion3D/Floor" groups=["FloorBody"]]
 collision_layer = 2
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/Floor/StaticBody3D"]
@@ -101,11 +99,3 @@ light_color = Color(1, 0.87451, 0.65098, 1)
 light_energy = 0.575
 light_indirect_energy = 0.404
 shadow_enabled = true
-
-[node name="Player" parent="." instance=ExtResource("10_d5ej6")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.1383, 0, -0.765901)
-
-[node name="Actor" parent="." instance=ExtResource("9_cwglq")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.68658, 0, -0.512296)
-
-[connection signal="input_event" from="NavigationRegion3D/Floor/StaticBody3D" to="Player" method="_on_floor_input_event"]

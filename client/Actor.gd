@@ -7,6 +7,12 @@ extends CharacterBody3D
 var animation_tween: Tween
 var rotation_speed: float = 5
 var movement_speed: float = 3
+var pid: String
+
+func init(pid_: String, initial_position: Vector3):
+	pid = pid_
+	position = initial_position
+	return self
 
 func navigate_to(nav_position: Vector3):
 	navigation_agent.target_position = nav_position

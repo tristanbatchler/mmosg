@@ -34,4 +34,7 @@ class PlayState(BaseState):
             await self._send_to_other(pck.HelloPacket(from_pid=self._pid, to_pid=p.from_pid, state_view=self.view_dict))
 
     async def handle_targetlocation(self, p: pck.TargetLocationPacket) -> None:
-        print(f"Received target location: {p.x}, {p.y}, {p.z}")
+        if p.from_pid == self._pid:
+            await self._send_to_other(pck.TargetLocationPacket(from_pid=self._pid, x=p.x, y=p.y, z=p.z, to_pid=EVERYONE, exclude_sender=True))
+        else:
+            await self._send_to_client(p)
