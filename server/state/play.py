@@ -44,3 +44,13 @@ class PlayState(BaseState):
             await self._send_to_other(pck.TargetLocationPacket(from_pid=self._pid, x=p.x, y=p.y, z=p.z, to_pid=EVERYONE, exclude_sender=True))
         else:
             await self._send_to_client(p)
+
+    async def handle_disconnect(self, p: pck.DisconnectPacket) -> None:
+        # If this came from our own client, forward it on
+        if p.from_pid == self._pid:
+            await self._send_to_other(pck.DisconnectPacket(from_pid=self._pid, to_pid=EVERYONE, exclude_sender=True, reason=p.reason))
+
+        # If this came from a different protocol, forward it directly to our client
+        else:
+            await self._send_to_client(pck.DisconnectPacket(from_pid=p.from_pid, reason=p.reason))
+            self._known_others.pop(p.from_pid, None)

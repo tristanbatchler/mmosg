@@ -24,7 +24,7 @@ async def main() -> None:
 
     async with asyncio.TaskGroup() as tg:
         tg.create_task(server_app.start(PlayState))
-        tg.create_task(server_app.run(ticks_per_second=30))
+        tg.create_task(server_app.run(ticks_per_second=30))       
 
 
 if __name__ == "__main__":

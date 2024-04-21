@@ -11,3 +11,6 @@ class TargetLocationPacket(BasePacket):
     x: float
     y: float
     z: float
+
+class DisconnectPacket(BasePacket):
+    reason: str

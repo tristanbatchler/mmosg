@@ -52,11 +52,8 @@ sky_material = SubResource("PanoramaSkyMaterial_e8d43")
 [sub_resource type="Environment" id="Environment_8t0jb"]
 background_mode = 2
 sky = SubResource("Sky_qftst")
-ssao_enabled = true
 ssao_radius = 5.69
 ssao_intensity = 4.61
-ssil_enabled = true
-sdfgi_enabled = true
 sdfgi_bounce_feedback = 1.32
 glow_intensity = 1.15
 fog_enabled = true
