@@ -2,7 +2,7 @@ extends Node3D
 
 @onready var actor: CharacterBody3D = $Actor
 @onready var navigation_agent: NavigationAgent3D = $Actor/NavigationAgent3D
-@onready var floor_body: StaticBody3D = get_tree().get_first_node_in_group("FloorBody")
+@onready var camera: Camera3D = $Actor/CamRoot/CamYaw/CamPitch/SpringArm3D/Camera3D
 
 var actor_initial_data: InitialActorData
 
@@ -12,19 +12,24 @@ func init(initial_data: InitialActorData):
 
 func _ready():
 	actor.init(GameManager.player_pid, actor_initial_data)
-	floor_body.connect("input_event", _on_floor_input_event)
 	UI.connect("chatbox_text_submitted", _on_ui_chatbox_text_submitted)
 
-func _on_floor_input_event(_camera: Node, event: InputEvent, event_position: Vector3, _normal: Vector3, _shape_idx: int):
+func _input(event):
 	if event.is_action_pressed("LeftMouse"):
-		actor.navigate_to(event_position)
+		var from = camera.project_ray_origin(event.position)
+		var to = from + camera.project_ray_normal(event.position) * 1000.0
+		var space = get_world_3d().direct_space_state
+		var query = PhysicsRayQueryParameters3D.create(from, to)
+		var info = space.intersect_ray(query)
 		
+		var hit_position: Vector3 = info["position"]
+		actor.navigate_to(hit_position)
 		NetworkClient.send_packet({
 			"Targetlocation": {
 				"from_pid": GameManager.player_pid, 
-				"x": event_position.x,
-				"y": event_position.y,
-				"z": event_position.z
+				"x": hit_position.x,
+				"y": hit_position.y,
+				"z": hit_position.z
 			}
 		})
 

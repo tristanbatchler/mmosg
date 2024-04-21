@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://b3kbc6qggnl61"]
 
-[ext_resource type="PackedScene" uid="uid://bp6wi6ol6ut5v" path="res://assets/3d_models/Guard_no_anim/Guard.gltf" id="1_6ma3f"]
+[ext_resource type="PackedScene" uid="uid://bp6wi6ol6ut5v" path="res://assets/3d_models/guard_no_anim/Guard.gltf" id="1_6ma3f"]
 [ext_resource type="PackedScene" uid="uid://ck2kav3lmu00q" path="res://assets/Animations.tscn" id="2_mhjxf"]
 
 [node name="Guard" instance=ExtResource("1_6ma3f")]

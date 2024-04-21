@@ -65,7 +65,7 @@ func _on_network_client_packet_received(p_type: String, p_data: Dictionary):
 			
 			if pids_actors.has(from_pid):
 				get_tree().root.remove_child(pids_actors[from_pid])
-				UI.add_to_log("%s has disconnected")
+				UI.add_to_log("%s has disconnected" % pids_actors[from_pid].initial_data.a_name)
 			else:
 				printerr("Got a disconnect packet from an unknown player: %s" % from_pid)
 				
