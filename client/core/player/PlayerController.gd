@@ -4,16 +4,14 @@ extends Node3D
 @onready var navigation_agent: NavigationAgent3D = $Actor/NavigationAgent3D
 @onready var floor_body: StaticBody3D = get_tree().get_first_node_in_group("FloorBody")
 
-var actor_initial_pos: Vector3
-var actor_name: String
+var actor_initial_data: InitialActorData
 
-func init(initial_position: Vector3, name_: String):
-	actor_initial_pos = initial_position
-	actor_name = name_
+func init(initial_data: InitialActorData):
+	actor_initial_data = initial_data
 	return self
 
 func _ready():
-	actor.init(GameManager.player_pid, actor_initial_pos, actor_name)
+	actor.init(GameManager.player_pid, actor_initial_data)
 	floor_body.connect("input_event", _on_floor_input_event)
 	UI.connect("chatbox_text_submitted", _on_ui_chatbox_text_submitted)
 

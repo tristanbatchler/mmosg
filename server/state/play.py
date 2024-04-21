@@ -2,7 +2,7 @@ from netbound.state import BaseState
 from netbound.constants import EVERYONE
 from typing import Coroutine, Any
 from dataclasses import dataclass
-from random import uniform, choice
+from random import uniform, choice, randint
 import server.packet as pck
 
 class PlayState(BaseState):
@@ -12,6 +12,7 @@ class PlayState(BaseState):
         y: float
         z: float
         name: str
+        mesh_index: int
 
     def __init__(self, *args, **kwargs) -> None:
         super().__init__(*args, **kwargs)
@@ -22,6 +23,7 @@ class PlayState(BaseState):
               choice(("random", "friendly", "obscene", "funny", "serious", "silly", "boring", "exciting", "cool", "lame")) + " " \
             + choice(("fish", "tree", "rock", "boss", "john", "monster", "prawn", "rice bowl", "noodle", "cat")) + " " \
             + self._pid.hex()[:4]
+        self._mesh_index: int = randint(0, 2)
             
         self._known_others: dict[bytes, PlayState.View] = {}
 

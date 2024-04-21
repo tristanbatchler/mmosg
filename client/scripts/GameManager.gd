@@ -3,6 +3,12 @@ extends Node
 const PlayerScene: PackedScene = preload("res://core/player/Player.tscn")
 const ActorScene: PackedScene = preload("res://core/actor/Actor.tscn")
 
+const Meshes: Array[PackedScene] = [
+	preload("res://assets/animated_character_scenes/Eve.tscn"), 
+	preload("res://assets/animated_character_scenes/TheBoss.tscn"),
+	preload("res://assets/animated_character_scenes/Prisoner.tscn")
+]
+
 var player_pid: String
 var pids_actors: Dictionary = {}
 
@@ -26,21 +32,20 @@ func _on_network_client_packet_received(p_type: String, p_data: Dictionary):
 				return
 			
 			var state_view: Dictionary = p_data["state_view"]
-			var x: float = state_view["x"]
-			var y: float = state_view["y"]
-			var z: float = state_view["z"]
-			var actor_name: String = state_view["name"]		
+			var initial_data: InitialActorData = InitialActorData.new()
+			initial_data.a_position = Vector3(state_view["x"], state_view["y"], state_view["z"])
+			initial_data.a_name = state_view["name"]
+			initial_data.a_mesh = Meshes[state_view["mesh_index"]]
 
-			UI.add_to_log("%s has joined the server" % actor_name)		
-
-			var initial_pos = Vector3(x, y, z)
-			var actor: CharacterBody3D = ActorScene.instantiate().init(from_pid, initial_pos, actor_name)
-			pids_actors[from_pid] = actor
+			UI.add_to_log("%s has joined the server" % initial_data.a_name)
 			
 			if from_pid == player_pid:
-				var player: Node3D = PlayerScene.instantiate().init(initial_pos, actor_name)
+				var player: Node3D = PlayerScene.instantiate().init(initial_data)
+				pids_actors[from_pid] = player.actor
 				get_tree().root.add_child(player)
 			else:
+				var actor: CharacterBody3D = ActorScene.instantiate().init(from_pid, initial_data)
+				pids_actors[from_pid] = actor
 				get_tree().root.add_child(actor)
 
 
@@ -63,7 +68,7 @@ func _on_network_client_packet_received(p_type: String, p_data: Dictionary):
 				
 		"Chat":
 			if pids_actors.has(from_pid):
-				var sender_name: String = pids_actors[from_pid].actor_name
+				var sender_name: String = pids_actors[from_pid].initial_data.a_name
 				var message: String = p_data["message"]
 				UI.add_to_log("%s: %s" % [sender_name, message])
 			else:
