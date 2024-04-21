@@ -13,6 +13,16 @@ func _ready():
 	NetworkClient.connect("packet_received", _on_network_client_packet_received)
 	NetworkClient.connect("server_disconnected", _on_network_client_server_disconnected)
 	NetworkClient.connect("server_connected", _on_network_client_server_connected)
+	UI.connect("chatbox_text_submitted", _on_ui_chatbox_text_submitted)
+
+func _on_ui_chatbox_text_submitted(text: String):
+	NetworkClient.send_packet({
+		"Chat": {
+			"from_pid": player_pid, 
+			"message": text, 
+			"to_pid": NetworkClient.EVERYONE
+		}
+	})
 
 func _on_network_client_packet_received(p_type: String, p_data: Dictionary):
 	var from_pid: String = Marshalls.raw_to_base64(p_data["from_pid"])
