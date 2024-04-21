@@ -30,6 +30,7 @@ func init(pid_: String, initial_data_: InitialActorData):
 	return self
 
 func _ready():
+	navigation_agent.velocity_computed.connect(_on_velocity_computed)
 	if init_called_before_ready:
 		set_initial_data()
 	

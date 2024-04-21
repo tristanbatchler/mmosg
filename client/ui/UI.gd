@@ -2,6 +2,7 @@ extends Control
 
 @onready var textbox: RichTextLabel = $MarginContainer/VBoxContainer/RichTextLabel
 @onready var line_edit: LineEdit = $MarginContainer/VBoxContainer/LineEdit
+@onready var fps_label: Label = $MarginContainer_Top/HBoxContainer/FPSLabel
 
 signal chatbox_text_submitted(text: String)
 
@@ -33,4 +34,7 @@ func _input(event):
 				line_edit.release_focus()
 		else:
 			line_edit.grab_focus()
+			
+func _physics_process(_delta):
+	fps_label.text = "%d" % Engine.get_frames_per_second()
 
