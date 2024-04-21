@@ -8,6 +8,7 @@ height = 3.71887
 [sub_resource type="Animation" id="Animation_uvqql"]
 resource_name = "Idle"
 length = 16.6333
+loop_mode = 1
 tracks/0/type = "position_3d"
 tracks/0/imported = true
 tracks/0/enabled = true
@@ -383,6 +384,7 @@ tracks/52/keys = PackedFloat32Array(0, 1, 0.3314, 9.00904e-07, 2.90772e-07, 0.94
 [sub_resource type="Animation" id="Animation_lmdwb"]
 resource_name = "T-Pose (No Animation)"
 length = 0.001
+loop_mode = 1
 tracks/0/type = "position_3d"
 tracks/0/imported = true
 tracks/0/enabled = true
@@ -758,6 +760,7 @@ tracks/52/keys = PackedFloat32Array(0, 1, 0.323578, 2.94676e-06, 1.03139e-06, 0.
 [sub_resource type="Animation" id="Animation_papai"]
 resource_name = "Walking"
 length = 0.966667
+loop_mode = 1
 tracks/0/type = "position_3d"
 tracks/0/imported = true
 tracks/0/enabled = true
@@ -1181,7 +1184,7 @@ libraries = {
 }
 tree_root = SubResource("AnimationNodeBlendTree_dhqo0")
 anim_player = NodePath("../Mesh/AnimationPlayer")
-parameters/movement_blend/blend_position = 0.948043
+parameters/movement_blend/blend_position = 0.05391
 
 [node name="Nameplate" type="Label3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.14722, 0)

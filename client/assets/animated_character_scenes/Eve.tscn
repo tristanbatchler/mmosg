@@ -4,7 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://ck2kav3lmu00q" path="res://assets/Animations.tscn" id="2_oi6aa"]
 
 [node name="Eve" instance=ExtResource("1_8o8tu")]
-transform = Transform3D(0.02, 0, 0, 0, 0.02, 0, 0, 0, 0.02, 0, 0.949191, 0)
+transform = Transform3D(0.015, 0, 0, 0, 0.015, 0, 0, 0, 0.015, 0, 0.705969, 0)
 
 [node name="Skeleton3D" parent="Node" index="0"]
 bones/0/position = Vector3(1.03701, 101.341, 2.88623)
