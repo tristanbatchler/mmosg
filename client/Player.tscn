@@ -19,7 +19,6 @@ script = ExtResource("2_3g0c2")
 transform = Transform3D(1, 0, 0, 0, 0.964137, 0.265405, 0, -0.265405, 0.964137, 0, 0, 0)
 
 [node name="SpringArm3D" type="SpringArm3D" parent="Actor/CamRoot/CamYaw/CamPitch"]
-collision_mask = 2
 
 [node name="Camera3D" type="Camera3D" parent="Actor/CamRoot/CamYaw/CamPitch/SpringArm3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.63955, 5.61153)
