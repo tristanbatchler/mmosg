@@ -50,12 +50,12 @@ func change_animation_to(state_name: String):
 	animation_tween.tween_property(animation_tree, "parameters/movement_blend/blend_position", animation_id, 0.25)
 
 func _physics_process(delta):
-	if not is_on_floor():
-		velocity.y -= 50 * delta
-		velocity.y = clamp(velocity.y, -1000, 1000)
-		_on_velocity_computed(velocity)
-	else:
-		velocity.y = 0
+	#if not is_on_floor():
+		#velocity.y -= 50 * delta
+		#velocity.y = clamp(velocity.y, -1000, 1000)
+		#_on_velocity_computed(velocity)
+	#else:
+		#velocity.y = 0
 
 	if navigation_agent.is_navigation_finished():
 		change_animation_to("Idle")

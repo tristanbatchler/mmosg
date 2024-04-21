@@ -16,9 +16,9 @@ class PlayState(BaseState):
 
     def __init__(self, *args, **kwargs) -> None:
         super().__init__(*args, **kwargs)
-        self._x: float = uniform(-30, 0)
-        self._y: float = 70
-        self._z: float = uniform(-70, 20)
+        self._x: float = uniform(-50.084, -37.317)
+        self._y: float = 2.5
+        self._z: float = uniform(11.714, 33.918)
         self._name: str = \
               choice(("random", "friendly", "obscene", "funny", "serious", "silly", "boring", "exciting", "cool", "lame")) + " " \
             + choice(("fish", "tree", "rock", "boss", "john", "monster", "prawn", "rice bowl", "noodle", "cat")) + " " \
