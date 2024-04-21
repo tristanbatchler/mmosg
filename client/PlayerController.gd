@@ -5,13 +5,15 @@ extends Node3D
 @onready var floor_body: StaticBody3D = get_tree().get_first_node_in_group("FloorBody")
 
 var actor_initial_position: Vector3
+var actor_name: String
 
 func _ready():
-	actor.init(GameManager.player_pid, actor_initial_position)
+	actor.init(GameManager.player_pid, actor_initial_position, actor_name)
 	floor_body.connect("input_event", _on_floor_input_event)
 
-func init(initial_position: Vector3):
+func init(initial_position: Vector3, actor_name_: String):
 	actor_initial_position = initial_position
+	actor_name = actor_name_
 	return self
 
 func _on_floor_input_event(camera: Node, event: InputEvent, position: Vector3, normal: Vector3, shape_idx: int):

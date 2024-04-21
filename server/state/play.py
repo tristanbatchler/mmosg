@@ -2,7 +2,7 @@ from netbound.state import BaseState
 from netbound.constants import EVERYONE
 from typing import Coroutine, Any
 from dataclasses import dataclass
-from random import uniform
+from random import uniform, choice
 import server.packet as pck
 
 class PlayState(BaseState):
@@ -11,12 +11,18 @@ class PlayState(BaseState):
         x: float
         y: float
         z: float
+        name: str
 
     def __init__(self, *args, **kwargs) -> None:
         super().__init__(*args, **kwargs)
         self._x: float = uniform(-10, 10)
         self._y: float = 0
         self._z: float = uniform(-10, 10)
+        self._name: str = \
+              choice(("random", "friendly", "obscene", "funny", "serious", "silly", "boring", "exciting", "cool", "lame")) + " " \
+            + choice(("fish", "tree", "rock", "boss", "john", "monster", "prawn", "rice bowl", "noodle", "cat")) + " " \
+            + self._pid.hex()[:4]
+            
         self._known_others: dict[bytes, PlayState.View] = {}
 
     async def _on_transition(self, previous_state_view: BaseState.View | None = None) -> Coroutine[Any, Any, None]:

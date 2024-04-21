@@ -3,15 +3,18 @@ extends CharacterBody3D
 @onready var navigation_agent: NavigationAgent3D = $NavigationAgent3D
 @onready var mesh_root: Node3D = $MeshRoot
 @onready var animation_tree: AnimationTree = $MeshRoot/AnimationTree
+@onready var nameplate: Label3D = $Nameplate
 
 var animation_tween: Tween
 var rotation_speed: float = 5
 var movement_speed: float = 3
 var pid: String
+var actor_name: String
 
-func init(pid_: String, initial_position: Vector3):
+func init(pid_: String, initial_position: Vector3, actor_name_: String):
 	pid = pid_
 	position = initial_position
+	actor_name = actor_name_
 	return self
 
 func navigate_to(nav_position: Vector3):
@@ -28,6 +31,8 @@ func change_animation_to(state_name: String):
 	var animation_id: int = ["idle", "walk"].find(state_name)
 	animation_tween.tween_property(animation_tree, "parameters/movement_blend/blend_position", animation_id, 0.25)
 
+func _process(delta):
+	nameplate.text = actor_name
 
 func _physics_process(delta):
 	if navigation_agent.is_navigation_finished():

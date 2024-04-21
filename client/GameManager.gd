@@ -23,13 +23,14 @@ func _on_network_client_packet_received(p_type: String, p_data: Dictionary):
 			var x: float = state_view["x"]
 			var y: float = state_view["y"]
 			var z: float = state_view["z"]
+			var name: String = state_view["name"]
 
 			if from_pid == player_pid:
-				var player: Node3D = PlayerScene.instantiate().init(Vector3(x, y, z))
+				var player: Node3D = PlayerScene.instantiate().init(Vector3(x, y, z), name)
 				get_tree().root.add_child(player)
 
 			elif not others_pids.has(from_pid):
-				var actor: CharacterBody3D = ActorScene.instantiate().init(from_pid, Vector3(x, y, z))
+				var actor: CharacterBody3D = ActorScene.instantiate().init(from_pid, Vector3(x, y, z), name)
 				others_pids[from_pid] = actor
 				get_tree().root.add_child(actor)
 
