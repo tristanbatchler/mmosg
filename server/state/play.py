@@ -23,7 +23,7 @@ class PlayState(BaseState):
               choice(("random", "friendly", "obscene", "funny", "serious", "silly", "boring", "exciting", "cool", "lame")) + " " \
             + choice(("fish", "tree", "rock", "boss", "john", "monster", "prawn", "rice bowl", "noodle", "cat")) + " " \
             + self._pid.hex()[:4]
-        self._mesh_index: int = randint(0, 2)
+        self._mesh_index: int = randint(0, 5)
             
         self._known_others: dict[bytes, PlayState.View] = {}
 

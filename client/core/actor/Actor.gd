@@ -6,8 +6,6 @@ extends CharacterBody3D
 @onready var animation_tree: AnimationTree = $MeshRoot/AnimationTree
 @onready var nameplate: Label3D = $Nameplate
 
-const EveMesh: PackedScene = preload("res://assets/animated_character_scenes/Eve.tscn")
-
 var animation_tween: Tween
 var rotation_speed: float = 5
 var movement_speed: float = 3

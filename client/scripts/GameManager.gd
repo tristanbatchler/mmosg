@@ -6,7 +6,10 @@ const ActorScene: PackedScene = preload("res://core/actor/Actor.tscn")
 const Meshes: Array[PackedScene] = [
 	preload("res://assets/animated_character_scenes/Eve.tscn"), 
 	preload("res://assets/animated_character_scenes/TheBoss.tscn"),
-	preload("res://assets/animated_character_scenes/Prisoner.tscn")
+	preload("res://assets/animated_character_scenes/Prisoner.tscn"),
+	preload("res://assets/animated_character_scenes/Parasite.tscn"),
+	preload("res://assets/animated_character_scenes/Guard.tscn"),
+	preload("res://assets/animated_character_scenes/SportyGranny.tscn"),
 ]
 
 var player_pid: String
