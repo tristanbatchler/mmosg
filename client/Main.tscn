@@ -1,14 +1,14 @@
 [gd_scene load_steps=18 format=3 uid="uid://cw6ai48n1cyrb"]
 
-[ext_resource type="Texture2D" uid="uid://d250bs1ed3t5o" path="res://4k JPEG/Stone 03/Stone03_Base Color.jpg" id="1_s1meo"]
-[ext_resource type="Texture2D" uid="uid://qp12w4cqssa4" path="res://4k JPEG/Stone 03/Stone03_Metallic.jpg" id="2_0vo5n"]
-[ext_resource type="Texture2D" uid="uid://cxfehrhwm75rw" path="res://4k JPEG/Grass 02/Grass03_Base Color.jpg" id="3_1x2sx"]
-[ext_resource type="Texture2D" uid="uid://c4j423vsrhamb" path="res://4k JPEG/Stone 03/Stone03_Normal.jpg" id="3_4a1vb"]
-[ext_resource type="Texture2D" uid="uid://c3x5vx4t766yv" path="res://4k JPEG/Grass 02/Grass02_Metallic.jpg" id="4_gmll7"]
-[ext_resource type="Texture2D" uid="uid://djrvwkqg53fid" path="res://4k JPEG/Stone 03/Stone03_Roughness.jpg" id="4_gua6y"]
-[ext_resource type="Texture2D" uid="uid://bscg6k4bkb8bj" path="res://4k JPEG/Grass 02/Grass02_Normal.jpg" id="5_d5td4"]
-[ext_resource type="Texture2D" uid="uid://cytmc4w5xm1l" path="res://4k JPEG/Grass 02/Grass02_Roughness.jpg" id="6_40ba7"]
-[ext_resource type="Texture2D" uid="uid://c0o5ld2fwdnjv" path="res://4k JPEG/blouberg_sunrise_2_4k.jpg" id="15_igp44"]
+[ext_resource type="Texture2D" uid="uid://d250bs1ed3t5o" path="res://assets/textures/stone/Stone03_Base Color.jpg" id="1_s1meo"]
+[ext_resource type="Texture2D" uid="uid://qp12w4cqssa4" path="res://assets/textures/stone/Stone03_Metallic.jpg" id="2_0vo5n"]
+[ext_resource type="Texture2D" uid="uid://cxfehrhwm75rw" path="res://assets/textures/grass/Grass03_Base Color.jpg" id="3_1x2sx"]
+[ext_resource type="Texture2D" uid="uid://c4j423vsrhamb" path="res://assets/textures/stone/Stone03_Normal.jpg" id="3_4a1vb"]
+[ext_resource type="Texture2D" uid="uid://c3x5vx4t766yv" path="res://assets/textures/grass/Grass02_Metallic.jpg" id="4_gmll7"]
+[ext_resource type="Texture2D" uid="uid://djrvwkqg53fid" path="res://assets/textures/stone/Stone03_Roughness.jpg" id="4_gua6y"]
+[ext_resource type="Texture2D" uid="uid://bscg6k4bkb8bj" path="res://assets/textures/grass/Grass02_Normal.jpg" id="5_d5td4"]
+[ext_resource type="Texture2D" uid="uid://cytmc4w5xm1l" path="res://assets/textures/grass/Grass02_Roughness.jpg" id="6_40ba7"]
+[ext_resource type="Texture2D" uid="uid://c0o5ld2fwdnjv" path="res://assets/textures/blouberg_sunrise_2_4k.jpg" id="15_igp44"]
 
 [sub_resource type="NavigationMesh" id="NavigationMesh_fbdo5"]
 vertices = PackedVector3Array(8.7415, 0.0114, -12.265, 10.9915, 0.0114, -12.515, 10.9915, 0.0114, -85.015, -92.7585, 0.0114, -85.015, -92.7585, 0.0114, -10.265, -92.7585, 0.0114, -10.265, 8.7415, 0.0114, -10.265, 8.7415, 0.0114, -12.265, 10.9915, 0.0114, -12.515, 13.2415, 0.0114, -12.515, 13.2415, 0.0114, -85.015, 10.9915, 0.0114, -85.015, 13.2415, 0.0114, -85.015, 13.2415, 0.0114, -12.515, 15.2415, 0.0114, -12.515, 13.2415, 0.0114, -85.015, 15.2415, 0.0114, -12.515, 15.4915, 0.0114, -10.765, 92.7415, 0.0114, -11.015, 92.7415, 0.0114, -85.015, 9.7415, 5.5414, -11.515, 9.7415, 5.5414, 0.235001, 14.4915, 5.5414, 0.235001, 14.4915, 5.5414, -11.515, 9.9915, 0.0114, -11.265, 9.9915, 0.0114, -0.0149994, 14.2415, 0.0114, -0.0149994, 14.2415, 0.0114, -11.265, 15.4915, 0.0114, -10.765, 15.4915, 0.0114, -0.514999, 92.7415, 0.0114, -0.264999, 92.7415, 0.0114, -11.015, -92.7585, 0.0114, -1.015, 8.7415, 0.0114, -1.015, 8.7415, 0.0114, -10.265, -92.7585, 0.0114, -10.265, 10.2415, 0.0114, 84.985, 10.4915, 0.0114, 1.235, 8.7415, 0.0114, 0.985001, -92.7585, 0.0114, -1.015, -92.7585, 0.0114, 84.985, 8.7415, 0.0114, 0.985001, 8.7415, 0.0114, -1.015, -92.7585, 0.0114, -1.015, 92.7415, 0.0114, -0.264999, 15.4915, 0.0114, -0.514999, 15.2415, 0.0114, 1.235, 13.9915, 0.0114, 84.985, 92.7415, 0.0114, 84.985, 15.2415, 0.0114, 1.235, 13.7415, 0.0114, 1.235, 13.9915, 0.0114, 84.985, 10.2415, 0.0114, 84.985, 13.9915, 0.0114, 84.985, 13.7415, 0.0114, 1.235, 10.4915, 0.0114, 1.235)
