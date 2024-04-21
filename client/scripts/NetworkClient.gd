@@ -26,22 +26,22 @@ func _process(delta) -> void:
 	socket.poll()
 	
 	var state = socket.get_ready_state()
-	if state == WebSocketPeer.STATE_CONNECTING:
-		if num_tries == 0:
-			server_connecting.emit()
-		elif num_tries >= timeout:
-			server_connect_timeout.emit()
-			set_process(false)
-		
-		OS.delay_msec(1000)
-		num_tries += 1
+	#if state == WebSocketPeer.STATE_CONNECTING:
+		#if num_tries == 0:
+			#server_connecting.emit()
+		#elif num_tries >= timeout:
+			#server_connect_timeout.emit()
+			#set_process(false)
+		#
+		#OS.delay_msec(1000)
+		#num_tries += 1
 
 		# debug
-		var time: String = Time.get_time_string_from_system()
-		print("Attempt %d at time: %s" % [num_tries, time])
+		#var time: String = Time.get_time_string_from_system()
+		#print("Attempt %d at time: %s" % [num_tries, time])
 		
 	
-	elif state == WebSocketPeer.STATE_OPEN:
+	if state == WebSocketPeer.STATE_OPEN:
 		if not connected:
 			connected = true
 			server_connected.emit()

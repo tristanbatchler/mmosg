@@ -1,6 +1,6 @@
 extends Resource
 class_name InitialActorData
 
-var a_position: Vector3
-var a_name: String
-var a_mesh: PackedScene
+@export var a_position: Vector3
+@export var a_name: String
+@export var a_mesh: PackedScene

@@ -10,22 +10,28 @@ var animation_tween: Tween
 var rotation_speed: float = 5
 var movement_speed: float = 3
 var pid: String
-var initial_data: InitialActorData
+
+@export var initial_data: InitialActorData
 
 # Hack to ensure the initial data is set only once both the init and _ready functions are fired
 # This is necessary because init relies on the nodes being ready, but _ready relies on initial_data.
-var init_called_before_ready: bool
+var init_called_before_ready: bool = false
 func set_initial_data():
 	mesh.create_instance(true, initial_data.a_mesh)
 	nameplate.text = initial_data.a_name
 	position = initial_data.a_position
 
 func init(pid_: String, initial_data_: InitialActorData):
+	if pid_ != GameManager.player_pid:
+		print("Debug")
 	self.pid = pid_
 	self.initial_data = initial_data_
 
 	if is_node_ready():
 		set_initial_data()
+	else:
+		init_called_before_ready = true
+		
 
 	return self
 
