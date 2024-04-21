@@ -53,10 +53,10 @@ func change_animation_to(state_name: String):
 func _physics_process(delta):
 	if not is_on_floor():
 		velocity.y -= 50 * delta
+		velocity.y = clamp(velocity.y, -1000, 1000)
 		_on_velocity_computed(velocity)
 	else:
 		velocity.y = 0
-	print("Y Velocity: %f\tOn Floor: %s" % [velocity.y, is_on_floor()])
 
 	if navigation_agent.is_navigation_finished():
 		change_animation_to("Idle")
