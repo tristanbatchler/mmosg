@@ -22,6 +22,8 @@ func _ready():
 	NetworkClient.connect("packet_received", _on_network_client_packet_received)
 	NetworkClient.connect("server_disconnected", _on_network_client_server_disconnected)
 	NetworkClient.connect("server_connected", _on_network_client_server_connected)
+	NetworkClient.connect("server_connect_timeout", _on_network_client_server_connect_timeout)
+	NetworkClient.connect("server_connecting", _on_network_client_server_connecting)
 
 func _on_network_client_packet_received(p_type: String, p_data: Dictionary):
 	var from_pid: String = Marshalls.raw_to_base64(p_data["from_pid"])
@@ -93,3 +95,9 @@ func _on_network_client_server_disconnected(code: int, reason: String, clean: bo
 		
 func _on_network_client_server_connected():
 	UI.add_to_log("Connected to server established", UI.GREEN)
+	
+func _on_network_client_server_connect_timeout():
+	UI.add_to_log("Timed out connecting to server.", UI.YELLOW)
+	
+func _on_network_client_server_connecting():
+	UI.add_to_log("Connecting to server...")
