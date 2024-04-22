@@ -3,7 +3,7 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://kcupcb8g7rob"
-path.s3tc="res://.godot/imported/Guard_0.png-33201d29fc82dc80e420de30790dcf8b.s3tc.ctex"
+path.s3tc="res://.godot/imported/Guard_0.png-f25b44b9dbe6c4d4457b4bd31dd50bfd.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -12,8 +12,8 @@ generator_parameters={}
 
 [deps]
 
-source_file="res://assets/3d_models/guard_no_anim/Guard_0.png"
-dest_files=["res://.godot/imported/Guard_0.png-33201d29fc82dc80e420de30790dcf8b.s3tc.ctex"]
+source_file="res://assets/3d_models/Guard_no_anim/Guard_0.png"
+dest_files=["res://.godot/imported/Guard_0.png-f25b44b9dbe6c4d4457b4bd31dd50bfd.s3tc.ctex"]
 
 [params]
 

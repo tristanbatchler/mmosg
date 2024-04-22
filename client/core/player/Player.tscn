@@ -10,7 +10,7 @@ script = ExtResource("1_6r4st")
 [node name="Actor" parent="." instance=ExtResource("1_tkdw1")]
 
 [node name="CamRoot" type="Node3D" parent="Actor"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.7331, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.748627, 0)
 script = ExtResource("2_3g0c2")
 
 [node name="CamYaw" type="Node3D" parent="Actor/CamRoot"]
@@ -19,6 +19,7 @@ script = ExtResource("2_3g0c2")
 transform = Transform3D(1, 0, 0, 0, 0.964137, 0.265405, 0, -0.265405, 0.964137, 0, 0, 0)
 
 [node name="SpringArm3D" type="SpringArm3D" parent="Actor/CamRoot/CamYaw/CamPitch"]
+spring_length = 0.4
 
 [node name="Camera3D" type="Camera3D" parent="Actor/CamRoot/CamYaw/CamPitch/SpringArm3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.63955, 5.61153)

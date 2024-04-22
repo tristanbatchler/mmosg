@@ -1,13 +1,10 @@
-[gd_scene load_steps=3 format=3 uid="uid://dnugcow2x2irc"]
+[gd_scene load_steps=3 format=3 uid="uid://dfxsu6wof18ad"]
 
-[ext_resource type="PackedScene" uid="uid://chgf8tv6by7q5" path="res://assets/3d_models/parasite_no_anim/Parasite.gltf" id="1_q4hvc"]
-[ext_resource type="PackedScene" uid="uid://ck2kav3lmu00q" path="res://assets/Animations.tscn" id="2_k3hvu"]
+[ext_resource type="PackedScene" uid="uid://chgf8tv6by7q5" path="res://assets/3d_models/parasite_no_anim/Parasite.gltf" id="1_fxfwc"]
+[ext_resource type="PackedScene" uid="uid://ck2kav3lmu00q" path="res://assets/Animations.tscn" id="2_sjmnp"]
 
-[node name="Parasite" instance=ExtResource("1_q4hvc")]
-transform = Transform3D(0.01, 0, 0, 0, 0.01, 0, 0, 0, 0.01, 0, 1.00766, 0)
-
-[node name="AnimationPlayer" parent="." index="0" instance=ExtResource("2_k3hvu")]
-root_node = NodePath("..")
+[node name="Parasite" instance=ExtResource("1_fxfwc")]
+transform = Transform3D(0.004, 0, 0, 0, 0.004, 0, 0, 0, 0.004, 0, 0.4481, 0)
 
 [node name="Skeleton3D" parent="Node" index="0"]
 bones/0/position = Vector3(0.413967, 100.915, 2.0943)
@@ -63,3 +60,6 @@ bones/64/rotation = Quaternion(-0.0716773, 0.042919, 0.992474, -0.089533)
 bones/65/rotation = Quaternion(-0.203423, 0.0497328, 0.00222147, 0.977825)
 bones/66/rotation = Quaternion(0.542426, -0.0267968, -0.00054586, 0.839676)
 bones/67/rotation = Quaternion(0.339068, -2.31666e-08, 4.51691e-08, 0.940762)
+
+[node name="AnimationPlayer" parent="." index="1" instance=ExtResource("2_sjmnp")]
+root_node = NodePath("..")
